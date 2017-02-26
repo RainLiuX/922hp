@@ -1,0 +1,14 @@
+user 'user922'@'localhost' pwd 'mensitao'
+datebase: project922
+table:name
+	User_id primary key
+	User_name name of user
+	Real_name real name of user
+	Email email...
+	Password password...
+
+table:possession
+	User_id primary key
+        User_name name of user
+	Money money in mensitao
+
