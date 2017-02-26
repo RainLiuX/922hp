@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php include('inc/header.php'); ?>
 <div class="navbar-header">
 	<a class="navbar-brand" href="index.php">922</a>
 </div></nav>

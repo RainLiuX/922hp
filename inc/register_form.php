@@ -1,4 +1,4 @@
-<h1>用户登录</h1>
+<h1>用户注册</h1>
 <form action="register.php" method="post" role="form">
 	<div class="form-group">
 		<p>用户名</p>
