@@ -9,7 +9,7 @@
 	} else {
 		$user_id = $_SESSION['User_id'];
 		$money_increase = round((time() - $_SESSION['Mining_start'])/3600, 2);
-		$_SESSION['Mining_time'] += round(time() - $_SESSION['Mining_start'], 2);
+		//$_SESSION['Mining_time'] += round(time() - $_SESSION['Mining_start'], 2);
 		$dbc = new mysqli('localhost', 'user922', 'mensitao', 'project922');
 		$query = "SELECT Money from possession WHERE User_id = $user_id;";
 		$retval = $dbc->query($query);

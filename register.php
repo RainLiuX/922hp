@@ -38,8 +38,8 @@
 				session_start();
 				$_SESSION['User_name'] = $user_name;
 				$_SESSION['User_id'] = $user_id;
-				print('<div class="container"><div class="jumbotron" style="background-color:#ccff99;"><h1>注册成功</h1></div></div>\n
-					<p>页面将于3秒后跳转</p>');
+				print('<div class="container"><div class="jumbotron" style="background-color:#ccff99;"><h1>注册成功</h1>
+					<p>页面将于3秒后跳转</p></div></div>');
 				header("Refresh:3, Url='index.php'");
 			}
 		}}

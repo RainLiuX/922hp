@@ -1,7 +1,11 @@
-<?php include('inc/header.php'); ?>
+<?php
+    session_start();
+    if(empty($_SESSION['User_id']))
+        header('Location:login.php');
+    include('inc/header.php');
+?>
 <body style="padding-top:50px;">
     <?php
-        session_start();
         include('inc/acquire_user_info.php');
         acquire_user_info();
     ?>
