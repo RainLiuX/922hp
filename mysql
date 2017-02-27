@@ -1,14 +1,20 @@
 user 'user922'@'localhost' pwd 'mensitao'
 datebase: project922
 table:name
-	User_id primary key
-	User_name name of user
-	Real_name real name of user
-	Email email...
-	Password password...
+	User_id int primary key auto_increment,
+	User_name varchar(32) not null,
+	Real_name varchar(32) not null,
+	Email varchar(128) not null,
+	Password varchar(128) not null
 
 table:possession
-	User_id primary key
-        User_name name of user
-	Money money in mensitao
+	User_id int primary key auto_increment
+    User_name varchar(32) not null,
+	Money float //money in mensitao
 
+table:profile
+	User_id int primary key auto_increment
+	User_name varchar(32) not null,
+	Gender tinyint, //0 female, 1 male
+	Age  tinyint,
+	Signature text

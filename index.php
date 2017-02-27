@@ -1,36 +1,4 @@
 <?php include('inc/header.php'); ?>
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
-				<span class="sr-only">切换导航</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">922</a>
-		</div>
-		<div class="collapse navbar-collapse" id="example-navbar-collapse">
-			<ul class="nav navbar-nav">
-			<li class="active"><a href="#">主页</a></li>
-			<li><a href="#">交易</a></li>
-			<li><a href="#">日志</a></li>
-			<li><a href="#">论坛</a></li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					个人中心
-					<b class="caret"></b>
-				</a>
-				<ul class="dropdown-menu" role="menu">
-					<li><a href="#">钱包</a></li>
-					<li><a href="#">我的帖子</a></li>
-					<li><a href="#">我的交易</a></li>
-					<li><a href="#">收藏</a></li>
-					<li class="danger"><a href="#">退出</a></li>
-				</ul>
-			</li>
-			</ul>
-		</div>
-	</nav>
-</head>
 <body style="padding-top:50px;">
 	<div class="jumbotron" style="background-color:#ccccff">
 		<div class="container">
@@ -76,4 +44,4 @@
 		</div>
 	</div>
 </body>
-</html>
+<?php include('inc/footer.php'); ?>
