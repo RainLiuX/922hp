@@ -15,7 +15,7 @@
 		</div>
 		<div class="col-sm-6" style="text-align:center;">
 			<h3><span class="glyphicon glyphicon-transfer"></span>兑换辣椒包</h3>
-			<h1>1.34辣椒包</h1>
+			<h1><?php printf(rand(500, 1000)/10000); ?>辣椒包</h1>
 			<a href="#"><small>了解更多关于辣椒包</small></a>
 		</div>
 	</div>
