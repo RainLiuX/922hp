@@ -7,7 +7,7 @@
 		} elseif(empty($_POST['password'])) {
 			print('<div class="container"><div class="jumbotron" style="background-color:#ff9900;"><h1>密码不能为空</h1></div></div>');
 		} else {
-			$dbc = new mysqli(SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS);
+			$dbc = new mysqli(SAE_MYSQL_HOST_M, SAE_MYSQL_USER, SAE_MYSQL_PASS, SAE_MYSQL_DB, SAE_MYSQL_PORT);
 			$user_name = mysqli_real_escape_string($dbc,trim(strip_tags($_POST['user_name'])));
 			$password = md5(mysqli_real_escape_string($dbc,trim(strip_tags($_POST['password']))));
 			$query = "SELECT * FROM user WHERE User_name = '$user_name';";

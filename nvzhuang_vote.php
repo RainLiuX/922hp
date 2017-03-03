@@ -1,5 +1,5 @@
 <?php include('inc/header_simple.php');
-    $dbc = new mysqli(SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS);
+    $dbc = new mysqli(SAE_MYSQL_HOST_M, SAE_MYSQL_USER, SAE_MYSQL_PASS, SAE_MYSQL_DB, SAE_MYSQL_PORT);
     foreach($_POST as $key => $value) {
         $query = "SELECT * FROM nvzhuang WHERE Id = $key;";
         $result = $dbc->query($query);

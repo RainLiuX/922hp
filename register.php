@@ -1,7 +1,5 @@
-<?php 
-include('inc/header_simple.php'); 
-ini_set("display_errors", "On");
-error_reporting(E_ALL | E_STRICT);
+<?php
+include('inc/header_simple.php');
 ?>
 <body style="padding-top:50px;">
 	<?php
@@ -17,7 +15,7 @@ error_reporting(E_ALL | E_STRICT);
 		} elseif($_POST['password'] != $_POST['password_repeat']) {
 			print('<div class="container"><div class="jumbotron" style="background-color:#ff9900;"><h1>两次密码不一致</h1></div></div>');
 		} else {
-			$dbc = new mysqli(SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS);
+			$dbc = new mysqli(SAE_MYSQL_HOST_M, SAE_MYSQL_USER, SAE_MYSQL_PASS, SAE_MYSQL_DB, SAE_MYSQL_PORT);
 			$user_name = mysqli_real_escape_string($dbc,trim(strip_tags($_POST['user_name'])));
 			$real_name = mysqli_real_escape_string($dbc,trim(strip_tags($_POST['real_name'])));
 			$email = mysqli_real_escape_string($dbc,trim(strip_tags($_POST['email'])));
@@ -38,8 +36,10 @@ error_reporting(E_ALL | E_STRICT);
 				//copy('pic/photo.jpg', "../user/$user_id/photo.jpg");
 				$s = new SaeStorage();
 				$path = "user/$user_id/photo.jpg";
-				$s->putObject($path, '922', 'pic/photo.jpg');
+				$s->upload('922', $path, 'pic/photo.jpg');
 				$query = "INSERT INTO possession(User_name, Money) VALUES ('$user_name', 0);";
+				$dbc->query($query);
+				$query = "INSERT INTO profile(User_name) VALUES ('$user_name');";
 				$dbc->query($query);
 				$dbc->close();
 				session_start();

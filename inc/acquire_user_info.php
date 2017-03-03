@@ -3,7 +3,7 @@
         global $user_id, $user_name, $money, $gender, $age, $signature;
         $user_id = $_SESSION['User_id'];
         $user_name = $_SESSION['User_name'];
-        $dbc = new mysqli(SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS);
+        $dbc = new mysqli(SAE_MYSQL_HOST_M, SAE_MYSQL_USER, SAE_MYSQL_PASS, SAE_MYSQL_DB, SAE_MYSQL_PORT);
         $query = "SELECT Money FROM possession WHERE User_id = $user_id;";
         $retval = $dbc->query($query);
         $retval = $retval->fetch_array();

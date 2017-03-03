@@ -34,7 +34,7 @@
 		<div class="container">
 			<h3>成员人数</h3>
 			<?php
-				$dbc = new mysqli(SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS);
+				$dbc = new mysqli(SAE_MYSQL_HOST_M, SAE_MYSQL_USER, SAE_MYSQL_PASS, SAE_MYSQL_DB, SAE_MYSQL_PORT);
 				$query = 'SELECT * FROM user;';
 				$result = $dbc->query($query);
 				$member_num = $result->num_rows;

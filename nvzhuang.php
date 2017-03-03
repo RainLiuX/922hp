@@ -7,7 +7,7 @@
         </div>
         <form action="nvzhuang_vote.php" method="post">
         <?php
-            $dbc = new mysqli(SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS);
+            $dbc = new mysqli(SAE_MYSQL_HOST_M, SAE_MYSQL_USER, SAE_MYSQL_PASS, SAE_MYSQL_DB, SAE_MYSQL_PORT);
             $query = "SELECT SUM(Vote) FROM nvzhuang;";
             $result =$dbc->query($query);
             $result = $result->fetch_array();
@@ -41,7 +41,7 @@
                         <h2>¥ '.$price.'</h2>
                         <br/>
                         <p>'.$description.'</p>
-                        <a hfef="'.$link.'">点此查看详情</a>
+                        <a href="'.$link.'">点此查看详情</a>
                     </div>
                     <hr />
                     <div class="progress">

@@ -12,7 +12,7 @@
         } elseif(empty($_POST['link'])) {
             print('<div class="container"><div class="jumbotron" style="background-color:#ff9900;"><h1>链接不能为空</h1></div>');
         } else {
-            $dbc = new mysqli(SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS);
+            $dbc = new mysqli(SAE_MYSQL_HOST_M, SAE_MYSQL_USER, SAE_MYSQL_PASS, SAE_MYSQL_DB, SAE_MYSQL_PORT);
             $name = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['name'])));
             $price = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['price'])));
             $description = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['description'])));
@@ -21,14 +21,14 @@
             $dbc->query($query);
             $query ="SELECT MAX(Id) FROM nvzhuang;";
             $result = $dbc->query($query);
-            $dbc->close();
             $result = $result->fetch_array();
             $id = $result['MAX(Id)'];
+			$dbc->close();
             //mkdir("../user/nvzhuang/$id");
             //move_uploaded_file($_FILES['picture']['tmp_name'], "../user/nvzhuang/$id/picture");
 			$s = new SaeStorage();
 			$path = "user/nvzhuang/$id/picture";
-			$->putObject($path, '922', $_FILES['picture']['tmp_name']);
+			$s->upload('922', $path, $_FILES['picture']['tmp_name']);
             print('<div class="container"><div class="jumbotron" style="background-color:#ccff99;"><h1>添加成功</h1>
                 <p>页面将于3秒后跳转</p></div></div>');
             header("Refresh:3, Url='nvzhuang.php'");
